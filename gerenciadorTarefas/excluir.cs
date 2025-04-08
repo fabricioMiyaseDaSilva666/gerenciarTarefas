@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace gerenciadorTarefas
+{
+    public partial class excluir : Form
+    {
+        DAO exc;
+        public excluir()
+        {
+            InitializeComponent();
+            exc= new DAO();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atualizarTarefa_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.ShowDialog();
+        }//Fim do Adicionar tarefa
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            atualizar atua = new atualizar();
+            atua.ShowDialog();
+        }//Fim do Editar Tarefa
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            consultar consult = new consultar();
+            consult.ShowDialog();
+        }//Fim do Consultar
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(textBox1.Text);
+            MessageBox.Show(exc.Excluir(codigo));
+            this.Close();
+        }//fim do botão excluir
+    }
+}

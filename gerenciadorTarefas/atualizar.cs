@@ -20,8 +20,7 @@ namespace gerenciadorTarefas
             InitializeComponent();
             textBox1.ReadOnly = false;
             textBox2.ReadOnly = true;
-            maskedTextBox1.ReadOnly = true;
-            textBox3.ReadOnly = true;
+           
         }
 
         private void atualizar_Load(object sender, EventArgs e)
@@ -39,20 +38,17 @@ namespace gerenciadorTarefas
             if (textBox1.Text == "")
             {
                 textBox2.Text = "Informe o Código";
-                maskedTextBox1.Text = "Informe o Código";
-                textBox3.Text = "Informe o Código";
+                comboBox1.Text = "Informe o Código";
             }
             else
             {
                 int codigo = Convert.ToInt32(textBox1);
                 textBox2.Text = atu.RetornarDescricao(codigo);
-                maskedTextBox1.Text = atu.RetornarDtVencimento(codigo);
-                textBox3.Text = atu.RetornarPrioridade(codigo);
+                dateTimePicker1.Text = atu.RetornarDtVencimento(codigo);
+                comboBox1.Text = atu.RetornarPrioridade(codigo);
 
                 textBox1.ReadOnly = true;
                 textBox2.ReadOnly = false;
-                maskedTextBox1.ReadOnly = false;
-                textBox3.ReadOnly=false;
             }
         }
 
@@ -73,8 +69,8 @@ namespace gerenciadorTarefas
             int codigo = Convert.ToInt32(textBox1.Text);
             string titulo =  textBox1.Text;
             string descricao = textBox2.Text;
-            string dtVencimento = maskedTextBox1.Text;
-            string prioridade = textBox3.Text;
+            string dtVencimento = dateTimePicker1.Text;
+            string prioridade = comboBox1.Text;
 
             atu.Atualizar(codigo, "descricao", descricao);
             atu.Atualizar(codigo, "dtVencimento", dtVencimento);
@@ -112,6 +108,21 @@ namespace gerenciadorTarefas
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

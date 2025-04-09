@@ -188,5 +188,17 @@
   <ItemGroup>
     <None Include="Resources\png__1_-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_49 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

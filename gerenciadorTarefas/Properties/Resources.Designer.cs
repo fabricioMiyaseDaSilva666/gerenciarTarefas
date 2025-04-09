@@ -63,6 +63,46 @@ namespace gerenciadorTarefas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 9 de abr. de 2025, 14_43_49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 9 de abr. de 2025, 14_43_49 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr1 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 9 de abr1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png {
             get {
                 object obj = ResourceManager.GetObject("png", resourceCulture);

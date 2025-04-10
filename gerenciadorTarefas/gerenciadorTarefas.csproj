@@ -138,6 +138,18 @@
     <Compile Include="inicial.Designer.cs">
       <DependentUpon>inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="listar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listar.Designer.cs">
+      <DependentUpon>listar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listarPrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listarPrio.Designer.cs">
+      <DependentUpon>listarPrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="atualizar.resx">
@@ -157,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inicial.resx">
       <DependentUpon>inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listar.resx">
+      <DependentUpon>listar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listarPrio.resx">
+      <DependentUpon>listarPrio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,6 +217,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_49 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_49 %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 9 de abr. de 2025, 14_43_492.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

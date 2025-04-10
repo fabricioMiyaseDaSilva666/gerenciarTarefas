@@ -18,9 +18,7 @@ namespace gerenciadorTarefas
         {
             atu = new DAO();
             InitializeComponent();
-            textBox1.ReadOnly = false;
-            textBox2.ReadOnly = true;
-           
+            textBox1.ReadOnly = false;           
         }
 
         private void atualizar_Load(object sender, EventArgs e)
@@ -48,7 +46,7 @@ namespace gerenciadorTarefas
                 comboBox1.Text = atu.RetornarPrioridade(codigo);
 
                 textBox1.ReadOnly = true;
-                textBox2.ReadOnly = false;
+                
             }
         }
 
@@ -114,8 +112,9 @@ namespace gerenciadorTarefas
 
         private void button9_Click(object sender, EventArgs e)
         {
-
-        }
+            consultar con = new consultar();
+            con.ShowDialog();
+        }//Fim do Consultar tarefas
 
         private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
@@ -126,5 +125,28 @@ namespace gerenciadorTarefas
         {
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            
+        }//Fim do editar
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            cadastrar cad = new cadastrar();
+            cad.ShowDialog();
+        }//Fim do Adicionar 
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            listar lis = new listar();
+            lis.ShowDialog();
+        }//Fim do Adicionar tarefas
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            excluir exclui = new excluir();
+            exclui.ShowDialog();
+        }//Fim do Excluir
     }
 }

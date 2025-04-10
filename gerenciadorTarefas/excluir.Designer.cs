@@ -115,6 +115,7 @@
             this.button9.TabIndex = 65;
             this.button9.Text = "Consultar tarefas";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -142,6 +143,7 @@
             this.button11.TabIndex = 63;
             this.button11.Text = "Editar tarefa";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -156,6 +158,7 @@
             this.button12.TabIndex = 62;
             this.button12.Text = "  Adicionar tarefa";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button7
             // 
@@ -183,6 +186,7 @@
             this.button6.TabIndex = 67;
             this.button6.Text = "Listar tarefa";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // excluir
             // 

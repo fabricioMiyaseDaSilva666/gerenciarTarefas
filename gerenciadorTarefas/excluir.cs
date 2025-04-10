@@ -48,5 +48,29 @@ namespace gerenciadorTarefas
             MessageBox.Show(exc.Excluir(codigo));
             this.Close();
         }//fim do botão excluir
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            consultar con = new consultar();
+            con.ShowDialog();
+        }//Fim do Consultar
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            atualizar atu = new atualizar();
+            atu.ShowDialog();
+        }//Fim do Editar tarefas
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            cadastrar cad = new cadastrar();
+            cad.ShowDialog();
+        }//Fim do Cadastrar
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            listar lis = new listar();
+            lis.ShowDialog();
+        }//Fim do listar
     }
 }

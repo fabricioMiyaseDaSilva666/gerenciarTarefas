@@ -12,21 +12,71 @@ namespace gerenciadorTarefas
 {
     public partial class consultar : Form
     {
+        DAO consul;
         public consultar()
         {
+            consul = new DAO();
             InitializeComponent();
+            ConfigurarDataGrid();
+            NomeColunas();
+            AdicionarDados();
         }
 
-        private void atualizarTarefa_Click(object sender, EventArgs e)
+        public void NomeColunas()
         {
-            Form1 form = new Form1();
-            form.ShowDialog();
-        }//Fim do Adicionar tarefa
+            
+            dataGridView1.Columns[0].Name = "Tarefas";
+            dataGridView1.Columns[1].Name = "Descrição";
+            dataGridView1.Columns[2].Name = "Data de Vencimento";
+            dataGridView1.Columns[3].Name = "Prioridade";
+        }
+
+        public void ConfigurarDataGrid()
+        {
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+
+            dataGridView1.ColumnCount = 4;
+        }
+
+        public void AdicionarDados()
+        {
+            consul.PreencherVetor();
+            for(int i = 0;i < consul.QuantidadeDeDados(); i++)
+            {
+                dataGridView1.Rows.Add(consul.titulo[i], consul.descricao[i], consul.dtVencimento[i], consul.prioridade[i]);
+            }
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
             atualizar atua = new atualizar();
             atua.ShowDialog();
         }//Fim do Editar tarefa
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            atualizar atu = new atualizar();
+            atu.ShowDialog();
+        }//Fim do editar tarefas
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            cadastrar cad = new cadastrar();
+            cad.ShowDialog();
+        }//Fim do cadastrar
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            listar lis = new listar();
+            lis.ShowDialog();
+        }//Fim do listar
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

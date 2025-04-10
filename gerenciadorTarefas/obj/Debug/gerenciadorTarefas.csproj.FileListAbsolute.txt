@@ -47,3 +47,5 @@ C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\ob
 C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\obj\Debug\gerenciadorTarefas.consultar.resources
 C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\obj\Debug\gerenciadorTarefas.inicial.resources
 C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\obj\Debug\gerenciadorTarefas.cadastrar.resources
+C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\obj\Debug\gerenciadorTarefas.listar.resources
+C:\Users\fabricio.msilva16\source\repos\gerenciadorTarefas\gerenciadorTarefas\obj\Debug\gerenciadorTarefas.listarPrio.resources

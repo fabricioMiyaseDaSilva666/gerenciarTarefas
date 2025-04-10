@@ -48,14 +48,14 @@ namespace gerenciadorTarefas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DAO inserir = new DAO();
+            DAO ins = new DAO();
             int codigo = Convert.ToInt32(textBox1.Text);
             string titulo = textBox1.Text;
             string descricao = textBox2.Text;
             string dtVencimento = RemoverCampoData(dateTimePicker1.Text);
             string prioridade = comboBox1.Text;
 
-            MessageBox.Show(inserir.Inserir(codigo, titulo, descricao, dtVencimento, prioridade));
+            MessageBox.Show(ins.Inserir(codigo, titulo, descricao, dtVencimento, prioridade));
             this.Close();
         }
        
@@ -131,17 +131,19 @@ namespace gerenciadorTarefas
         {
             atualizar atu = new atualizar();
             atu.ShowDialog();
-        }
+        }//Fim do atualizar
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
+            consultar con = new consultar();
+            con.ShowDialog();
+        }//Fim do Consultar
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-        }
+            listar lis = new listar();
+            lis.ShowDialog();
+        }//Fim do listar
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {

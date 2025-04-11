@@ -37,12 +37,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.atualizarTarefa = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
             this.button7.Location = new System.Drawing.Point(446, 111);
             this.button7.Name = "button7";
@@ -50,10 +53,12 @@
             this.button7.TabIndex = 69;
             this.button7.Text = "Listar por prioridades";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
             this.button3.Location = new System.Drawing.Point(230, 111);
             this.button3.Name = "button3";
@@ -151,18 +156,31 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(181, 166);
+            this.dataGridView3.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView3.Location = new System.Drawing.Point(159, 165);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(449, 223);
+            this.dataGridView3.Size = new System.Drawing.Size(527, 234);
             this.dataGridView3.TabIndex = 70;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(179)))));
+            this.pictureBox1.BackgroundImage = global::gerenciadorTarefas.Properties.Resources.ChatGPT_Image_9_de_abr__de_2025__14_43_49__1__2;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, -28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 71);
+            this.pictureBox1.TabIndex = 75;
+            this.pictureBox1.TabStop = false;
             // 
             // listarPrio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 471);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button3);
@@ -174,7 +192,9 @@
             this.Controls.Add(this.atualizarTarefa);
             this.Name = "listarPrio";
             this.Text = "listarPrio";
+            this.Load += new System.EventHandler(this.listarPrio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,5 +210,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button atualizarTarefa;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

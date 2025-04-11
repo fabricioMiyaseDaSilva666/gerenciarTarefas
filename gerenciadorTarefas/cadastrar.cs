@@ -16,13 +16,14 @@ namespace gerenciadorTarefas
 {
     public partial class cadastrar : Form
     {
-
+        Form1 form;
         private void cadastrar_Load(object sender, EventArgs e)
         {
             ArredondarBotao(atualizarTarefa);
             ArredondarBotao(button4);
             ArredondarBotao(button2);
             ArredondarBotao(button6);
+            form = new Form1();
         }
 
         // Função para arredondar botões
@@ -54,8 +55,9 @@ namespace gerenciadorTarefas
             string descricao = textBox2.Text;
             string dtVencimento = RemoverCampoData(dateTimePicker1.Text);
             string prioridade = comboBox1.Text;
+            string statu = "Pendente";
 
-            MessageBox.Show(ins.Inserir(codigo, titulo, descricao, dtVencimento, prioridade));
+            MessageBox.Show(ins.Inserir(codigo, titulo, descricao, dtVencimento, prioridade, statu));
             this.Close();
         }
        
@@ -129,8 +131,11 @@ namespace gerenciadorTarefas
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             atualizar atu = new atualizar();
             atu.ShowDialog();
+            
+
         }//Fim do atualizar
 
         private void button2_Click(object sender, EventArgs e)

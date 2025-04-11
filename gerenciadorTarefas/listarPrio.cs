@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace gerenciadorTarefas
             dataGridView3.Columns[1].Name = "Descrição";
             dataGridView3.Columns[2].Name = "Data de Vencimento";
             dataGridView3.Columns[3].Name = "Prioridade";
+            dataGridView3.Columns[4].Name = "Status";
         }
 
         public void ConfigurarDataGrid3()
@@ -38,7 +40,7 @@ namespace gerenciadorTarefas
             dataGridView3.AllowUserToResizeColumns = false;
             dataGridView3.AllowUserToResizeRows = false;
 
-            dataGridView3.ColumnCount = 4;
+            dataGridView3.ColumnCount = 5;
         }
 
         public void AdicionarDados3()
@@ -46,7 +48,7 @@ namespace gerenciadorTarefas
             consul.VerPrioridade();
             for (int ip = 0; ip < consul.QuantidadeDePrioridade(); ip++)
             {
-                dataGridView3.Rows.Add(consul.tituloPrio[ip], consul.descricaoPrio[ip], consul.dtVencimentoPrio[ip], consul.prioridadePrio[ip]);
+                dataGridView3.Rows.Add(consul.tituloPrio[ip], consul.descricaoPrio[ip], consul.dtVencimentoPrio[ip], consul.prioridadePrio[ip], consul.statuPrio[ip]);
             }
         }
 
@@ -80,6 +82,39 @@ namespace gerenciadorTarefas
         }//Fim do listar das Datas
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listarPrio_Load(object sender, EventArgs e)
+        
+            {
+                ArredondarBotao(button6);
+                ArredondarBotao(atualizarTarefa);
+                ArredondarBotao(button2);
+                ArredondarBotao(button4);
+                ArredondarBotao(button3);
+                ArredondarBotao(button7);
+            }
+
+            // Função para arredondar botões
+            private void ArredondarBotao(System.Windows.Forms.Button btn)
+            {
+                GraphicsPath path = new GraphicsPath();
+                int radius = 25;
+
+                path.AddArc(0, 0, radius, radius, 180, 90);
+                path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+                path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+                path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+                path.CloseAllFigures();
+
+                btn.Region = new Region(path);
+
+            }
+        
+
+        private void button7_Click(object sender, EventArgs e)
         {
 
         }

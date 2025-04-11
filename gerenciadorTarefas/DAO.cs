@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace gerenciadorTarefas
 {
@@ -25,6 +26,9 @@ namespace gerenciadorTarefas
         public string[] prioridade;
         public string[] prioridaded;
         public string[] prioridadePrio;
+        public string[] statu;
+        public string[] statuD;
+        public string[] statuPrio;
         public int i;
         public int contador;
         public int id;
@@ -32,11 +36,12 @@ namespace gerenciadorTarefas
         public int ip;
         public int contadorP;
         public int contadorPrio;
+        public int registros;
 
 
         public DAO()
         {
-            conexao = new MySqlConnection("server=localhost;Database=projetoCSharp;Uid=root;password=;Convert Zero Datetime=True");
+            conexao = new MySqlConnection("server=localhost;Database=projetoCSharps;Uid=root;password=;Convert Zero Datetime=True");
             try
             {
                 conexao.Open();
@@ -46,9 +51,9 @@ namespace gerenciadorTarefas
             }
         }//Fim do constructor
 
-        public string Inserir(int codigo, string titulo, string descricao, string dtVencimento, string prioridade)
+        public string Inserir(int codigo, string titulo, string descricao, string dtVencimento, string prioridade, string statu)
         {
-            string inserir = $"Insert into tarefas(codigo, titulo, descricao, dtVencimento, prioridade) values('{codigo}','{titulo}','{descricao}','{dtVencimento}','{prioridade}')";
+            string inserir = $"Insert into tarefas(codigo, titulo, descricao, dtVencimento, prioridade, statu) values('{codigo}','{titulo}','{descricao}','{dtVencimento}','{prioridade}','{statu}')";
             MySqlCommand sql = new MySqlCommand(inserir, conexao);
             string resultado = sql.ExecuteNonQuery() + " Executado!";
             return resultado;
@@ -62,6 +67,7 @@ namespace gerenciadorTarefas
             this.descricao = new string[100];
             this.dtVencimento = new string[100];
             this.prioridade = new string[100];
+            this.statu = new string[100];
 
             MySqlCommand sql = new MySqlCommand(query, conexao);
             MySqlDataReader leitura = sql.ExecuteReader();
@@ -74,6 +80,7 @@ namespace gerenciadorTarefas
                 descricao[i] = leitura["descricao"] + "";
                 dtVencimento[i] = leitura["dtVencimento"]+ "";
                 prioridade[i] = leitura["prioridade"] + "";
+                statu[i] = leitura["statu"] + "";
                 i++;
                 contador++;
             }//Fim do while
@@ -88,6 +95,7 @@ namespace gerenciadorTarefas
             this.descricaod = new string[100];
             this.dtVencimentod = new string[100];
             this.prioridaded = new string[100];
+            this.statuD = new string[100];
 
             MySqlCommand sql = new MySqlCommand(query, conexao);
             MySqlDataReader leituras = sql.ExecuteReader();
@@ -100,6 +108,7 @@ namespace gerenciadorTarefas
                 descricaod[id] = leituras["descricao"] + "";
                 dtVencimentod[id] = leituras["dtVencimento"] + "";
                 prioridaded[id] = leituras["prioridade"] + "";
+                statuD[id] = leituras["statu"] + "";
                 id++;
                 contadores++;
             }//Fim do while
@@ -114,6 +123,7 @@ namespace gerenciadorTarefas
             this.descricaoPrio = new string[100];
             this.dtVencimentoPrio = new string[100];
             this.prioridadePrio = new string[100];
+            this.statuPrio = new string[100];
 
             MySqlCommand sql = new MySqlCommand(query, conexao);
             MySqlDataReader leituras = sql.ExecuteReader();
@@ -126,20 +136,21 @@ namespace gerenciadorTarefas
                 descricaoPrio[ip] = leituras["descricao"] + "";
                 dtVencimentoPrio[ip] = leituras["dtVencimento"] + "";
                 prioridadePrio[ip] = leituras["prioridade"] + "";
+                statuPrio[ip] = leituras["statu"] + "";
                 ip++;
                 contadorPrio++;
             }//Fim do while
             leituras.Close();
         }//Fim do método
 
-        public int ConsultarPorCodigo(int cod)
+        public int ConsultarPorTitulo(string titu)
         {
             PreencherVetor();
 
             i = 0;
             while (i < QuantidadeDeDados())
             {
-                if (codigo[i] == cod)
+                if (titulo[i] == titu)
                 {
                     return i;
                 }
@@ -164,9 +175,9 @@ namespace gerenciadorTarefas
             return -1;
         }//Fim do método
 
-        public string RetornarTitulo(int cod)
+        public string RetornarTitulo(string titu)
         {
-            int posicao = ConsultarPorCodigo(cod);
+            int posicao = ConsultarPorTitulo(titu);
             if (posicao > -1)
             {
                 return titulo[posicao];
@@ -174,9 +185,9 @@ namespace gerenciadorTarefas
             return "Código digitado não é valido";
         }//Fim do retornar titulo
 
-        public string RetornarDescricao(int cod)
+        public string RetornarDescricao(string titulo)
         {
-            int posicao = ConsultarPorCodigo(cod);
+            int posicao = ConsultarPorTitulo(titulo);
             if (posicao > -1)
             {
                 return descricao[posicao];
@@ -184,9 +195,9 @@ namespace gerenciadorTarefas
             return "Código digitado não é valido";
         }//Fim do retornar descrição
 
-        public string RetornarDtVencimento(int cod)
+        public string RetornarDtVencimento(string titulo)
         {
-            int posicao = ConsultarPorCodigo(cod);
+            int posicao = ConsultarPorTitulo(titulo);
             if (posicao > -1)
             {
                 return dtVencimento[posicao];
@@ -195,9 +206,9 @@ namespace gerenciadorTarefas
 
         }//Fim do retornar data de vencimento
 
-        public string RetornarPrioridade(int cod)
+        public string RetornarPrioridade(string titulo)
         {
-            int posicao = ConsultarPorCodigo(cod);
+            int posicao = ConsultarPorTitulo(titulo);
             if (posicao > -1)
             {
                 return prioridade[posicao];

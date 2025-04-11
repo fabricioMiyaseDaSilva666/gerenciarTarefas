@@ -63,6 +63,36 @@ namespace gerenciadorTarefas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3331057 {
+            get {
+                object obj = ResourceManager.GetObject("3331057", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3331057__3_ {
+            get {
+                object obj = ResourceManager.GetObject("3331057 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3331057_1 {
+            get {
+                object obj = ResourceManager.GetObject("3331057 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 9 de abr. de 2025, 14_43_49", resourceCulture);
@@ -83,9 +113,29 @@ namespace gerenciadorTarefas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49__1__2 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 9 de abr. de 2025, 14_43_49 (1) 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_9_de_abr__de_2025__14_43_49__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT_Image_9_de_abr._de_2025__14_43_49__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mais_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("mais-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

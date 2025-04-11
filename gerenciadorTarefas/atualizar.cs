@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace gerenciadorTarefas
 {
@@ -23,7 +25,28 @@ namespace gerenciadorTarefas
 
         private void atualizar_Load(object sender, EventArgs e)
         {
+            ArredondarBotao(button11);
+            ArredondarBotao(button12);
+            ArredondarBotao(button2);
+            ArredondarBotao(button9);
+            ArredondarBotao(button3);
+            ArredondarBotao(button6);
+            ArredondarBotao(button1);
+        }
 
+        // Função para arredondar botões
+        private void ArredondarBotao(System.Windows.Forms.Button btn)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int radius = 25;
+
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            btn.Region = new Region(path);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,12 +63,16 @@ namespace gerenciadorTarefas
             }
             else
             {
-                int codigo = Convert.ToInt32(textBox1);
-                textBox2.Text = atu.RetornarDescricao(codigo);
-                dateTimePicker1.Text = atu.RetornarDtVencimento(codigo);
-                comboBox1.Text = atu.RetornarPrioridade(codigo);
+                string titulo = textBox1.Text;
+                textBox2.Text = atu.RetornarDescricao(titulo);
+                //comboBox1.Text = atu.RetornarDescricao(titulo);
+                //comboBox2.Text = atu.RetornarDescricao(titulo);
+                
+
+
 
                 textBox1.ReadOnly = true;
+                //textBox2.ReadOnly= false;
                 
             }
         }
@@ -69,10 +96,13 @@ namespace gerenciadorTarefas
             string descricao = textBox2.Text;
             string dtVencimento = dateTimePicker1.Text;
             string prioridade = comboBox1.Text;
+            string statu = comboBox2.Text;
 
+            atu.Atualizar(codigo, "titulo", titulo);
             atu.Atualizar(codigo, "descricao", descricao);
             atu.Atualizar(codigo, "dtVencimento", dtVencimento);
             atu.Atualizar(codigo, "prioridade", prioridade);
+            atu.Atualizar(codigo, "statu", statu);
             MessageBox.Show("Dados Atualizados com Sucesso!");
             this.Close();
         }//Fim do botão atualizar
@@ -148,5 +178,10 @@ namespace gerenciadorTarefas
             excluir exclui = new excluir();
             exclui.ShowDialog();
         }//Fim do Excluir
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

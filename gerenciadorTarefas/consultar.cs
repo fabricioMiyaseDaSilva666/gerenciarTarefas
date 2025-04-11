@@ -29,6 +29,7 @@ namespace gerenciadorTarefas
             dataGridView1.Columns[1].Name = "Descrição";
             dataGridView1.Columns[2].Name = "Data de Vencimento";
             dataGridView1.Columns[3].Name = "Prioridade";
+            dataGridView1.Columns[4].Name = "Status";
         }
 
         public void ConfigurarDataGrid()
@@ -38,7 +39,7 @@ namespace gerenciadorTarefas
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
 
-            dataGridView1.ColumnCount = 4;
+            dataGridView1.ColumnCount = 5;
         }
 
         public void AdicionarDados()
@@ -46,7 +47,7 @@ namespace gerenciadorTarefas
             consul.PreencherVetor();
             for(int i = 0;i < consul.QuantidadeDeDados(); i++)
             {
-                dataGridView1.Rows.Add(consul.titulo[i], consul.descricao[i], consul.dtVencimento[i], consul.prioridade[i]);
+                dataGridView1.Rows.Add(consul.titulo[i], consul.descricao[i], consul.dtVencimento[i], consul.prioridade[i], consul.statu[i]);
             }
         }
 

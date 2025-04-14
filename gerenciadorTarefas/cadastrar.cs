@@ -23,6 +23,8 @@ namespace gerenciadorTarefas
             ArredondarBotao(button4);
             ArredondarBotao(button2);
             ArredondarBotao(button6);
+            ArredondarBotao(button1);
+            ArredondarBotao(button7);
             form = new Form1();
         }
 
@@ -50,15 +52,17 @@ namespace gerenciadorTarefas
         private void button3_Click(object sender, EventArgs e)
         {
             DAO ins = new DAO();
-            int codigo = Convert.ToInt32(textBox1.Text);
+            
             string titulo = textBox1.Text;
             string descricao = textBox2.Text;
             string dtVencimento = RemoverCampoData(dateTimePicker1.Text);
             string prioridade = comboBox1.Text;
             string statu = "Pendente";
 
-            MessageBox.Show(ins.Inserir(codigo, titulo, descricao, dtVencimento, prioridade, statu));
+            MessageBox.Show(ins.Inserir(titulo, descricao, dtVencimento, prioridade, statu));
             this.Close();
+            consultar con = new consultar();
+            con.ShowDialog();
         }
        
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -153,6 +157,17 @@ namespace gerenciadorTarefas
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            excluir exc = new excluir();
+            exc = new excluir();
         }
     }
 }

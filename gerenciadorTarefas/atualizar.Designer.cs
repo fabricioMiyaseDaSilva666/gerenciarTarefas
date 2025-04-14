@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,6 @@
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -92,6 +92,20 @@
             this.groupBox1.Size = new System.Drawing.Size(411, 323);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Pendente",
+            "Em andamento",
+            "Concluída"});
+            this.comboBox2.Location = new System.Drawing.Point(275, 243);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 62;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -117,16 +131,16 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(179)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(179)))));
+            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(309, 284);
+            this.button6.Location = new System.Drawing.Point(647, 62);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 24);
+            this.button6.Size = new System.Drawing.Size(135, 22);
             this.button6.TabIndex = 47;
-            this.button6.Text = "Excluir";
+            this.button6.Text = "Excluir tarefa";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -242,7 +256,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(575, 58);
+            this.button9.Location = new System.Drawing.Point(495, 61);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(135, 23);
             this.button9.TabIndex = 57;
@@ -270,7 +284,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(409, 58);
+            this.button11.Location = new System.Drawing.Point(339, 61);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(135, 23);
             this.button11.TabIndex = 55;
@@ -285,7 +299,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(250, 58);
+            this.button12.Location = new System.Drawing.Point(180, 61);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(135, 23);
             this.button12.TabIndex = 54;
@@ -300,7 +314,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(94, 58);
+            this.button2.Location = new System.Drawing.Point(25, 61);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 23);
             this.button2.TabIndex = 60;
@@ -323,25 +337,29 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // comboBox2
+            // button8
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pendente",
-            "Em andamento",
-            "Concluída"});
-            this.comboBox2.Location = new System.Drawing.Point(275, 243);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 62;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.button8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.Location = new System.Drawing.Point(12, 389);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(40, 24);
+            this.button8.TabIndex = 76;
+            this.button8.Text = "<-";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // atualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 471);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button9);
@@ -384,5 +402,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button8;
     }
 }

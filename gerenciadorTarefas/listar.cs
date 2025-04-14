@@ -95,6 +95,7 @@ namespace gerenciadorTarefas
                 ArredondarBotao(button2);
                 ArredondarBotao(button3);
                 ArredondarBotao(button7);
+                ArredondarBotao(button9);
             }
 
             // Função para arredondar botões
@@ -111,7 +112,17 @@ namespace gerenciadorTarefas
 
                 btn.Region = new Region(path);
             }
-        
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            excluir exc = new excluir();
+            exc = new excluir();
+        }
+    }
     }
 

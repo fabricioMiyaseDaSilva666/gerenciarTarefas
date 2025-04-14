@@ -45,9 +45,11 @@ namespace gerenciadorTarefas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int codigo = Convert.ToInt32(textBox1.Text);
-            MessageBox.Show(exc.Excluir(codigo));
+            string titulo = textBox1.Text;
+            MessageBox.Show(exc.Excluir(titulo));
             this.Close();
+            Form1 form = new Form1();
+            form.ShowDialog();
         }//fim do botão excluir
 
         private void button9_Click(object sender, EventArgs e)
@@ -82,6 +84,7 @@ namespace gerenciadorTarefas
                 ArredondarBotao(button11);
                 ArredondarBotao(button9);
                 ArredondarBotao(button3);
+                ArredondarBotao(button1);
             }
 
             // Função para arredondar botões
@@ -98,6 +101,18 @@ namespace gerenciadorTarefas
 
                 btn.Region = new Region(path);
             
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            excluir exc = new excluir();
+            exc = new excluir();
         }
     }
 }

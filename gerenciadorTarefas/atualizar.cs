@@ -58,8 +58,8 @@ namespace gerenciadorTarefas
         {
             if (textBox1.Text == "")
             {
-                textBox2.Text = "Informe o Código";
-                comboBox1.Text = "Informe o Código";
+                textBox2.Text = "Informe o Título";
+                
             }
             else
             {
@@ -91,20 +91,22 @@ namespace gerenciadorTarefas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int codigo = Convert.ToInt32(textBox1.Text);
+            
             string titulo =  textBox1.Text;
             string descricao = textBox2.Text;
             string dtVencimento = dateTimePicker1.Text;
             string prioridade = comboBox1.Text;
             string statu = comboBox2.Text;
 
-            atu.Atualizar(codigo, "titulo", titulo);
-            atu.Atualizar(codigo, "descricao", descricao);
-            atu.Atualizar(codigo, "dtVencimento", dtVencimento);
-            atu.Atualizar(codigo, "prioridade", prioridade);
-            atu.Atualizar(codigo, "statu", statu);
+            atu.Atualizar(titulo, "titulo", titulo);
+            atu.Atualizar(titulo, "descricao", descricao);
+            atu.Atualizar(titulo, "dtVencimento", dtVencimento);
+            atu.Atualizar(titulo, "prioridade", prioridade);
+            atu.Atualizar(titulo, "statu", statu);
             MessageBox.Show("Dados Atualizados com Sucesso!");
             this.Close();
+            Form1 form = new Form1();
+            form.ShowDialog();
         }//Fim do botão atualizar
 
 
@@ -180,6 +182,16 @@ namespace gerenciadorTarefas
         }//Fim do Excluir
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

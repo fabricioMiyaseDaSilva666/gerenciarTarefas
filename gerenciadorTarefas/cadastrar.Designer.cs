@@ -46,6 +46,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -190,7 +192,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(570, 59);
+            this.button2.Location = new System.Drawing.Point(498, 59);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 23);
             this.button2.TabIndex = 11;
@@ -205,7 +207,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(413, 59);
+            this.button4.Location = new System.Drawing.Point(341, 59);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(135, 23);
             this.button4.TabIndex = 9;
@@ -220,7 +222,7 @@
             this.atualizarTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atualizarTarefa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.atualizarTarefa.ForeColor = System.Drawing.Color.White;
-            this.atualizarTarefa.Location = new System.Drawing.Point(256, 59);
+            this.atualizarTarefa.Location = new System.Drawing.Point(184, 59);
             this.atualizarTarefa.Name = "atualizarTarefa";
             this.atualizarTarefa.Size = new System.Drawing.Size(135, 23);
             this.atualizarTarefa.TabIndex = 8;
@@ -262,7 +264,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(103, 59);
+            this.button6.Location = new System.Drawing.Point(31, 59);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(135, 23);
             this.button6.TabIndex = 14;
@@ -280,11 +282,43 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.Location = new System.Drawing.Point(12, 393);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(40, 24);
+            this.button8.TabIndex = 76;
+            this.button8.Text = "<-";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(645, 60);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(135, 22);
+            this.button7.TabIndex = 77;
+            this.button7.Text = "Excluir tarefa";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 471);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -323,5 +357,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -51,9 +51,9 @@ namespace gerenciadorTarefas
             }
         }//Fim do constructor
 
-        public string Inserir(int codigo, string titulo, string descricao, string dtVencimento, string prioridade, string statu)
+        public string Inserir(string titulo, string descricao, string dtVencimento, string prioridade, string statu)
         {
-            string inserir = $"Insert into tarefas(codigo, titulo, descricao, dtVencimento, prioridade, statu) values('{codigo}','{titulo}','{descricao}','{dtVencimento}','{prioridade}','{statu}')";
+            string inserir = $"Insert into tarefas(codigo, titulo, descricao, dtVencimento, prioridade, statu) values('','{titulo}','{descricao}','{dtVencimento}','{prioridade}','{statu}')";
             MySqlCommand sql = new MySqlCommand(inserir, conexao);
             string resultado = sql.ExecuteNonQuery() + " Executado!";
             return resultado;
@@ -192,7 +192,7 @@ namespace gerenciadorTarefas
             {
                 return descricao[posicao];
             }
-            return "Código digitado não é valido";
+            return "Titulo inválido";
         }//Fim do retornar descrição
 
         public string RetornarDtVencimento(string titulo)
@@ -216,6 +216,16 @@ namespace gerenciadorTarefas
             return "Código digitado não é valido";
         }//Fim do retornar prioridade
 
+        public string RetornarStatus(string titulo)
+        {
+            int posicao = ConsultarPorTitulo(titulo);
+            if (posicao > -1)
+            {
+                return statu[posicao];
+            }
+            return "Código digitado não é valido";
+        }//Fim do retornar prioridade
+
         public int QuantidadeDeDados()
         {
             return contador;
@@ -231,24 +241,20 @@ namespace gerenciadorTarefas
             return contadorPrio;
         }//Fim do método
 
-        public string Atualizar(int codigo, string campo, string dado)
+        public string Atualizar(string titulo, string campo, string dado)
         {
-            string query = $"update tarefas set {campo} = '{dado}' where codigo = '{codigo}'";
+            string query = $"update tarefas set {campo} = '{dado}' where titulo = '{titulo}'";
             MySqlCommand sql = new MySqlCommand(query, conexao);
             string resultado = sql.ExecuteNonQuery() + " Atualizado";
             return resultado;
         }//Fim do método de atualizar
 
-        public string Excluir(int codigo)
+        public string Excluir(string titulo)
         {
-            string query = $"delete from tarefas where codigo = '{codigo}'";
+            string query = $"delete from tarefas where titulo = '{titulo}'";
             MySqlCommand sql = new MySqlCommand(query, conexao);
             string resultado = sql.ExecuteNonQuery() + " Deletado";
             return resultado;
         }//Fim do método excluir
-
-        
-
-      
     }
 }

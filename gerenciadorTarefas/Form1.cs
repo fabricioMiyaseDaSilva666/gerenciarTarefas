@@ -23,25 +23,7 @@ namespace gerenciadorTarefas
 
 
         {
-                ArredondarBotao(button1);
-               
-            }
-
-            // Função para arredondar botões
-            private void ArredondarBotao(System.Windows.Forms.Button btn)
-            {
-                GraphicsPath path = new GraphicsPath();
-                int radius = 65;
-            
-
-                path.AddArc(0, 0, radius, radius, 180, 90);
-                path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
-                path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
-                path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
-                path.CloseAllFigures();
-
-                btn.Region = new Region(path);
-            }
+        }
         
 
         
